@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import ReactDatePicker from 'react-datepicker';
+import { useState } from 'react';
 
 function App() {
+
+const [date, setDate] = useState(new Date());
+
+const [announcementMessage, setAnnouncementMessage] = useState('Welcome');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <form>
+        <div className='input-group'>
+          <input name='announcement-msg'>{announcementMessage}</input>
+        </div>
+        <div className='input-group'>
+          <input name='username' type='text'>username</input>
+        </div>
+        <div className='input-group'>
+          <input name='datepicker'>
+            <ReactDatePicker selected={date} onChange={(date) => setDate(date)}></ReactDatePicker>
+          </input>
+        </div>
+      </form>
     </div>
   );
 }
