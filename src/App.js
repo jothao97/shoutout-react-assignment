@@ -18,7 +18,6 @@ const handleSubmit = (e) => {
 
   return (
     <div className='app'>
-      <h1>Shout Out!</h1>
       <form>
         <div>
           <input name='message'>{message}</input>
