@@ -7,7 +7,14 @@ function App() {
 
 const [date, setDate] = useState(new Date());
 
-const [announcementMessage, setAnnouncementMessage] = useState('Welcome');
+const [message, setMessage] = useState('');
+
+const [username, setUsername] = useState('');
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  onSubmit({date, message, username});
+}
 
   return (
     <div className='app'>
