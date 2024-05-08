@@ -7,18 +7,26 @@ function App() {
 
 const [date, setDate] = useState(new Date());
 
-const [announcementMessage, setAnnouncementMessage] = useState('Welcome');
+const [message, setMessage] = useState('');
+
+const [username, setUsername] = useState('');
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  onSubmit({date, message, username});
+}
 
   return (
     <div className='app'>
+      <h1>Shout Out!</h1>
       <form>
-        <div className='input-group'>
-          <input name='announcement-msg'>{announcementMessage}</input>
+        <div>
+          <input name='message'>{message}</input>
         </div>
-        <div className='input-group'>
+        <div>
           <input name='username' type='text'>username</input>
         </div>
-        <div className='input-group'>
+        <div>
           <input name='datepicker'>
             <ReactDatePicker selected={date} onChange={(date) => setDate(date)}></ReactDatePicker>
           </input>
